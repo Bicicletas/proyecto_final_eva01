@@ -107,9 +107,11 @@ GameObject:
   - component: {fileID: 2929442807103817620}
   - component: {fileID: 230331518781823355}
   - component: {fileID: 2917560935038546692}
+  - component: {fileID: -4859155544794511628}
+  - component: {fileID: 2660045422279597120}
   m_Layer: 0
   m_Name: Proyectil
-  m_TagString: Untagged
+  m_TagString: Proyectil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -143,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66f8e93a33b787646aeedd188718fd33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
+  speed: 120
 --- !u!114 &2917560935038546692
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -156,6 +158,35 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94a5f2a8074d7804fbcc965b50a3bfe4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!54 &-4859155544794511628
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3603667485462919075}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2660045422279597120
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3603667485462919075}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.8981905}
+  m_Center: {x: 2.3494407e-16, y: 0, z: -0.44909602}
 --- !u!1 &7196871894455828438
 GameObject:
   m_ObjectHideFlags: 0
