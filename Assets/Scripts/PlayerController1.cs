@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController1 : MonoBehaviour
 {
-    private float verticalInput;
-    private float horizontalInput;
+    public float verticalInput;
+    public float horizontalInput;
     public float speed = 20f;
     public float turnSpeed = 20f;
     private float hRange = 200f;
     private float vRange = 200f;
     private float zRange = 200f;
-
-
 
     // Start is called before the first frame update
     void Start()
@@ -25,19 +23,19 @@ public class PlayerController : MonoBehaviour
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
 
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Rotate(Vector3.up * turnSpeed * Time.deltaTime * horizontalInput);
 
         verticalInput = Input.GetAxis("Vertical");
-        transform.Rotate(Vector3.left * speed * Time.deltaTime * verticalInput);
+        transform.Rotate(Vector3.left * turnSpeed * Time.deltaTime * verticalInput);
 
 
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Rotate(Vector3.up * speed * Time.deltaTime * horizontalInput);
 
-        if(transform.position.x > hRange)
+        if (transform.position.x > hRange)
         {
             transform.position = new Vector3(hRange, transform.position.y, transform.position.z);
         }
-        else if(transform.position.x < -hRange)
+        else if (transform.position.x < -hRange)
         {
             transform.position = new Vector3(-hRange, transform.position.y, transform.position.z);
         }
@@ -59,7 +57,5 @@ public class PlayerController : MonoBehaviour
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -zRange);
         }
-
-
     }
 }
