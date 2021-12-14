@@ -11,14 +11,14 @@ public class PlayerController1 : MonoBehaviour
     private float hRange = 200f;
     private float vRange = 200f;
     private float zRange = 200f;
+    private int contador;
+    private int maxContador = 10;
 
-    // Start is called before the first frame update
     void Start()
     {
         transform.position = new Vector3(0, 100, 0);
     }
 
-    // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * speed * Time.deltaTime);
@@ -28,8 +28,6 @@ public class PlayerController1 : MonoBehaviour
 
         verticalInput = Input.GetAxis("Vertical");
         transform.Rotate(Vector3.left * turnSpeed * Time.deltaTime * verticalInput);
-
-
 
         if (transform.position.x > hRange)
         {
@@ -56,6 +54,20 @@ public class PlayerController1 : MonoBehaviour
         else if (transform.position.z < -zRange)
         {
             transform.position = new Vector3(transform.position.x, transform.position.y, -zRange);
+        }
+    }
+    private void OnTriggerEnter(Collider otherCollider)
+    {
+        if (otherCollider.gameObject.CompareTag("Coin"))
+        {
+            Destroy(otherCollider.gameObject);
+            contador++;
+            Debug.Log($"Tienes {contador} monedas");
+            if (contador == maxContador)
+            {
+                Time.timeScale = 0;
+                Debug.Log("VICTORY");
+            }
         }
     }
 }

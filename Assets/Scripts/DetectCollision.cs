@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
-    // Update is called once per frame
-    void Update()
+    private void OnCollisionEnter(Collision otherCollider)
     {
-        
-    }
 
-    private void OnTriggerEnter(Collider otherCollider)
-    {
-        Destroy(gameObject);
-        Destroy(otherCollider.gameObject);
+        if (gameObject.CompareTag("Obstacle") && otherCollider.gameObject.CompareTag("Proyectil"))
+        {
+            Destroy(otherCollider.gameObject);
+            Destroy(gameObject);
+
+        }
+
+        if (gameObject.CompareTag("Obstacle") && otherCollider.gameObject.CompareTag("Player"))
+        {
+            Time.timeScale = 0;
+            Debug.Log("GAME OVER");
+        }
+
+
+
     }
 }

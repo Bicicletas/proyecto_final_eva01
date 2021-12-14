@@ -5,17 +5,10 @@ using UnityEngine;
 public class DestroyOutOfBounds : MonoBehaviour
 {
 
-    private float hRange = 200f;
-    private float vRange = 200f;
-    private float zRange = 200f;
+    private float hRange = 400f;
+    private float yRange = 400f;
+    private float zRange = 400f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         if (transform.position.x > hRange)
@@ -27,11 +20,11 @@ public class DestroyOutOfBounds : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (transform.position.y > vRange)
+        if (transform.position.y > yRange)
         {
             Destroy(gameObject);
         }
-        else if (transform.position.y < 0)
+        else if (transform.position.y < -yRange)
         {
             Destroy(gameObject);
         }
