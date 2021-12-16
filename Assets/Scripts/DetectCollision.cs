@@ -4,11 +4,8 @@ using UnityEngine;
 
 public class DetectCollision : MonoBehaviour
 {
-    
-
     private void OnCollisionEnter(Collision otherCollider)
     {
-
         if (gameObject.CompareTag("Obstacle") && otherCollider.gameObject.CompareTag("Proyectil"))
         {
             Destroy(otherCollider.gameObject);
@@ -21,8 +18,5 @@ public class DetectCollision : MonoBehaviour
             Time.timeScale = 0;
             Debug.Log("GAME OVER");
         }
-
-
-
     }
 }

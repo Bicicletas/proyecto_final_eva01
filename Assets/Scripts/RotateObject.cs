@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class RotateObject : MonoBehaviour
 {
-
     public float turnSpeed = 20f;
 
     void Update()

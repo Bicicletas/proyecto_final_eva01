@@ -6,11 +6,14 @@ public class PlayerController1 : MonoBehaviour
 {
     public float verticalInput;
     public float horizontalInput;
+
     public float speed = 20f;
     public float turnSpeed = 20f;
+
     private float hRange = 200f;
     private float vRange = 200f;
     private float zRange = 200f;
+
     private int contador;
     private int maxContador = 10;
 

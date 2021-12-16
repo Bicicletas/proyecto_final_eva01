@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class ProyectileLauncher : MonoBehaviour
 {
-
     public GameObject projectilePrefab;
 
     void Update()
